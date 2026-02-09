@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1090651938408",
+    "project_id": "my-money-11fcd",
+    "storage_bucket": "my-money-11fcd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090651938408:android:656a2aa42ebbcaaf79a5dd",
+        "android_client_info": {
+          "package_name": "com.moneyking.financial"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI8duij8k2Pu-Dxup7VTGSLmHzW6e-tF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
