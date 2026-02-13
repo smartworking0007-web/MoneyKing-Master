@@ -14,22 +14,16 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.moneyking.financial",
-      "googleServicesFile": "./GoogleService-Info.plist" 
+      "bundleIdentifier": "com.moneyking.financial"
     },
     "android": {
       "package": "com.moneyking.financial",
-      "googleServicesFile": "./google-services.json", 
       "adaptiveIcon": {
         "foregroundImage": "./assets/NewLogo.png",
         "backgroundColor": "#0D0D0D"
       },
       "edgeToEdgeEnabled": true
     },
-    "plugins": [
-      "@react-native-firebase/app",
-      "@react-native-firebase/auth"
-    ],
     "web": {
       "favicon": "./assets/logo.png"
     },
