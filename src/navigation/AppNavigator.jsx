@@ -24,23 +24,24 @@
 
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createDrawerNavigator } from '@react-navigation/drawer'; // Naya import
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import OnboardingScreen from '../screens/OnboardingScreen';
 import LoginScreen from '../screens/LoginScreen';
 import OTPScreen from '../screens/OtpScreen';
 import RegistrationScreen from '../screens/RegistrationScreen';
-import DashboardScreen, { SidebarContent } from '../screens/DashboardScreen'; // SidebarContent bhi import karein
+import DashboardScreen, { SidebarContent } from '../screens/DashboardScreen';
+// 1. PersonalLoanScreen ko import karein (Path check kar lein)
+import PersonalLoanScreen from '../screens/PersonalLoanScreen'; 
+import BusinessLoanScreen from '../screens/BusinessLoanScreen';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
 // --- Drawer Navigation Logic ---
-// Ye function Dashboard aur Sidebar ko handle karega
-
 const DrawerNavigator = () => {
   return (
     <Drawer.Navigator 
-      drawerContent={(props) => <SidebarContent {...props} />} // Hamara Custom Sidebar
+      drawerContent={(props) => <SidebarContent {...props} />} 
       screenOptions={{ 
         headerShown: false, 
         drawerStyle: { width: '80%', backgroundColor: '#151518' } 
@@ -60,8 +61,16 @@ const AppNavigator = () => {
       <Stack.Screen name="OTPVerification" component={OTPScreen} />
       <Stack.Screen name="Registration" component={RegistrationScreen} />
       
-      {/* Yahan Dashboard ki jagah humne DrawerNavigator ko rakha hai */}
+      {/* Dashboard with Sidebar */}
       <Stack.Screen name="Dashboard" component={DrawerNavigator} />
+
+      {/* 2. Personal Loan Screen ko Stack mein add kiya 
+          Iska matlab hai ki ye Dashboard ke upar khulega aur isme sidebar nahi dikhega.
+          Iska name 'PersonalLoan' rakha hai jise navigation.navigate mein use karenge. */}
+      
+          <Stack.Screen name="PersonalLoan" component={PersonalLoanScreen} />
+          <Stack.Screen name="BusinessLoan" component={BusinessLoanScreen} />
+          
     </Stack.Navigator>
   );
 };

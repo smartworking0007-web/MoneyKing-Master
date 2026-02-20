@@ -24,12 +24,17 @@ const SideItem = ({ icon, label }) => (
 );
 
 // 2. Reusable Section Component
+
 const Section = ({ title, items }) => (
   <View style={{ marginBottom: 20 }}>
     <Text style={styles.secTitle}>{title}</Text>
     <View style={styles.gridContainer}>
       {items.map((item, index) => (
-        <TouchableOpacity key={index} style={styles.gridItem}>
+        <TouchableOpacity
+          key={index}
+          style={styles.gridItem}
+          onPress={() => item.onPress && item.onPress()}   // ✅ YAHI MISSING THA
+        >
           <View style={styles.gridIcon}>
             <Icon name={item.icon} size={30} color="#fff" />
           </View>
@@ -39,6 +44,7 @@ const Section = ({ title, items }) => (
     </View>
   </View>
 );
+
 
 // 3. MAIN DASHBOARD SCREEN
 const DashboardScreen = ({ navigation }) => {
@@ -81,7 +87,14 @@ const DashboardScreen = ({ navigation }) => {
             <Section
               title="Trending Loans & Services"
               items={[
-                { icon: "account", label: "Personal Loan" },
+                { 
+                  icon: "account", 
+                  label: "Personal Loan", 
+                  onPress: () => navigation.navigate('PersonalLoan')
+                  
+                },
+
+
                 { icon: "briefcase", label: "Business Loan" },
                 { icon: "home", label: "Home Loan" },
                 { icon: "cog", label: "Machinery Loan" },
