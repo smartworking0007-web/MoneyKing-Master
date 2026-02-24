@@ -33,6 +33,7 @@ import DashboardScreen, { SidebarContent } from '../screens/DashboardScreen';
 // 1. PersonalLoanScreen ko import karein (Path check kar lein)
 import PersonalLoanScreen from '../screens/PersonalLoanScreen'; 
 import BusinessLoanScreen from '../screens/BusinessLoanScreen';
+import HomeLoanScreen from '../screens/HomeLoanScreen';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -70,6 +71,7 @@ const AppNavigator = () => {
       
           <Stack.Screen name="PersonalLoan" component={PersonalLoanScreen} />
           <Stack.Screen name="BusinessLoan" component={BusinessLoanScreen} />
+          <Stack.Screen name="HomeLoan" component={HomeLoanScreen} />
           
     </Stack.Navigator>
   );

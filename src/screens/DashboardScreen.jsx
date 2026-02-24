@@ -14,6 +14,8 @@ import {
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const { width } = Dimensions.get("window");
+import BusinessLoanScreen from "./BusinessLoanScreen";
+import HomeLoanScreen from "./HomeLoanScreen";
 
 // 1. Reusable SideItem Component
 const SideItem = ({ icon, label }) => (
@@ -95,8 +97,15 @@ const DashboardScreen = ({ navigation }) => {
                 },
 
 
-                { icon: "briefcase", label: "Business Loan" },
-                { icon: "home", label: "Home Loan" },
+                { 
+                  icon: "briefcase", 
+                  label: "Business Loan" , 
+                  onPress: () => navigation.navigate('BusinessLoan') 
+                },
+                { icon: "home",
+                   label: "Home Loan" ,  
+                    onPress: () => navigation.navigate('HomeLoan') 
+                  },
                 { icon: "cog", label: "Machinery Loan" },
                 { icon: "file-document", label: "Bond" },
                 { icon: "credit-card", label: "Credit Cards" },
