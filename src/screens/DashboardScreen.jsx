@@ -14,8 +14,12 @@ import {
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const { width } = Dimensions.get("window");
+
 import BusinessLoanScreen from "./BusinessLoanScreen";
 import HomeLoanScreen from "./HomeLoanScreen";
+import MachineryLoanScreen from "./MachineryLoan";
+import LoanEMIScreen from "./LoanEMIScreen";
+import SIPCalculatorScreen from "./SIPCalculatorScreen";
 
 // 1. Reusable SideItem Component
 const SideItem = ({ icon, label }) => (
@@ -106,9 +110,16 @@ const DashboardScreen = ({ navigation }) => {
                    label: "Home Loan" ,  
                     onPress: () => navigation.navigate('HomeLoan') 
                   },
-                { icon: "cog", label: "Machinery Loan" },
-                { icon: "file-document", label: "Bond" },
-                { icon: "credit-card", label: "Credit Cards" },
+
+                { icon: "wrench",
+                   label: "Machinery Loan",
+                   onPress: () => navigation.navigate('MachineryLoan')
+                },
+                { icon: "finance", label: "Open a Demat A/c" },
+                { icon: "credit-card",
+                   label: "Credit Cards",
+                   onPress: () => navigation.navigate('CreditCardScreen') 
+                },
               ]}
             />
 
@@ -124,8 +135,14 @@ const DashboardScreen = ({ navigation }) => {
             <Section
               title="Calculators"
               items={[
-                { icon: "calculator", label: "EMI Calculator" },
-                { icon: "chart-line", label: "SIP Calculator" },
+                { icon: "calculator",
+                   label: "EMI Calculator",
+                   onPress: () => navigation.navigate('LoanEMIScreen')
+                  },
+                { icon: "chart-line", 
+                  label: "SIP Calculator",
+                   onPress: () => navigation.navigate('SIPCalculatorScreen')
+                 },
               ]}
             />
           </View>

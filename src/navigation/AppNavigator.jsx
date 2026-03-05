@@ -34,6 +34,10 @@ import DashboardScreen, { SidebarContent } from '../screens/DashboardScreen';
 import PersonalLoanScreen from '../screens/PersonalLoanScreen'; 
 import BusinessLoanScreen from '../screens/BusinessLoanScreen';
 import HomeLoanScreen from '../screens/HomeLoanScreen';
+import MachineryLoanScreen from '../screens/MachineryLoan';
+import CreditCardScreen from '../screens/CreditCardScreen';
+import LoanEMIScreen from '../screens/LoanEMIScreen';
+import SIPCalculatorScreen from '../screens/SIPCalculatorScreen';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -72,6 +76,12 @@ const AppNavigator = () => {
           <Stack.Screen name="PersonalLoan" component={PersonalLoanScreen} />
           <Stack.Screen name="BusinessLoan" component={BusinessLoanScreen} />
           <Stack.Screen name="HomeLoan" component={HomeLoanScreen} />
+          <Stack.Screen name="MachineryLoan" component={MachineryLoanScreen} />
+          <Stack.Screen name="CreditCardScreen" component={CreditCardScreen} />
+          <Stack.Screen name="LoanEMIScreen" component={LoanEMIScreen} />
+          <Stack.Screen name="SIPCalculatorScreen" component={SIPCalculatorScreen} />
+
+
           
     </Stack.Navigator>
   );
